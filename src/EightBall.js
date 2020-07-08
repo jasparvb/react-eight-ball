@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './EightBall.css';
 
 function getRandom(arr) {
     let idx = Math.floor(Math.random() * arr.length);
@@ -16,9 +17,9 @@ function EightBall(props) {
     };
 
     return (
-        <button className="EightBall " onClick={handleClick} style={{ backgroundColor: color }}>
+        <div className="EightBall" onClick={handleClick} style={{ backgroundColor: color }}>
         <b>{ answer }</b>
-        </button>
+        </div>
     );
 }
 
