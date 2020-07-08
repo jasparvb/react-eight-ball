@@ -1,6 +1,26 @@
 import React, { useState } from "react";
 
+function getRandom(arr) {
+    let idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
 
+function EightBall(props) {
+    const [answer, setAnswer] = useState('Think of a Question');
+    const [color, setColor] = useState('black');
+
+    function handleClick() {
+        let randAnswer = getRandom(props.answers);
+        setAnswer(randAnswer.msg);
+        setColor(randAnswer.color);
+    };
+
+    return (
+        <button className="EightBall " onClick={handleClick} style={{ backgroundColor: color }}>
+        <b>{ answer }</b>
+        </button>
+    );
+}
 
 EightBall.defaultProps = {
     answers: [
